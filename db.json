@@ -1,0 +1,59 @@
+{
+  "wearther": [
+    {
+      "id": "1",
+      "city": "ahemdabad",
+      "tempature": "18 ",
+      "desc": "smoke",
+      "windspeed": "1.54",
+      "humidity": "53%",
+      "clouds": "0%"
+    },
+    {
+      "id": "2",
+      "city": "kadi",
+      "tempature": "18 ",
+      "desc": "smoke",
+      "windspeed": "1.54",
+      "humidity": "53%",
+      "clouds": "0%"
+    },
+    {
+      "id": "3",
+      "city": "noida",
+      "tempature": "18 ",
+      "desc": "smoke",
+      "windspeed": "1.54",
+      "humidity": "53%",
+      "clouds": "0%"
+    },
+    {
+      "id": "4",
+      "city": "delhi",
+      "tempature": "18 c",
+      "desc": "smoke",
+      "windspeed": "1.54",
+      "humidity": "53%",
+      "clouds": "0%"
+    }
+  ],
+  "users": [
+    {
+      "id": "2f9f",
+      "email": "imsendy1299@gmail.com",
+      "password": "asdasd"
+    },
+    {
+      "id": "bc20",
+      "cardholder name": "Thakor Sandip Karshanjj",
+      "card number": "544545454646486485",
+      "exp. date ": "",
+      "[mm?yy]": "",
+      "cvc": "46848486",
+      "exp": {
+        " date ": "131"
+      },
+      "mm?yy": "5648646"
+    }
+  ]
+}
