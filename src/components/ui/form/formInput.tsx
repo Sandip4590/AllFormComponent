@@ -15,7 +15,7 @@ const FormInput = ({ control, name, rules, label,className ,labelClassName, ...p
       rules={rules}
       render={({ field }) => (
         <FormItem className={cn(className)}>
-          <FormLabel className={cn("text-violet-950  uppercase text-xs",labelClassName)}>{label}</FormLabel>
+          <FormLabel className={cn(" ",labelClassName)}>{label}</FormLabel>
           <FormControl>
             <Input {...field} {...props} />
           </FormControl>

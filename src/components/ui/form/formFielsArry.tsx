@@ -6,27 +6,41 @@ import { cn } from "@/lib/utils";
 
 type Props = {};
 
-const FormFieldArray = ({ control, name, fieldArray,className }: any) => {
+const FormFieldArray = ({ control, name, fieldArray, className }: any) => {
   const { fields, append, remove } = useFieldArray({
     control,
     name: name,
   });
 
   return (
-    <ul className=" flex flex-col gap-3.5">
+    <ul className=" flex w-lg  flex-col gap-3.5">
       {fields.map((item, index) => (
-        <li key={item.name} className={cn("",className)}>
-          {fieldArray.map(({ component: Component, name: itemName, ...item }) => {
-            return <Component key={item.name} control={control} name={`${name}.${index}.${itemName}`} {...item} />;
-          })}
+        <li key={item.name} className={cn("", className)}>
+          {fieldArray.map(
+            ({ component: Component, name: itemName, ...item }) => {
+              return (
+                <Component
+                  key={item.name}
+                  control={control}
+                  name={`${name}.${index}.${itemName}`}
+                  {...item}
+                />
+              );
+            }
+          )}
           <Button size="icon" type="button" onClick={() => remove(index)}>
             <TrashIcon />
           </Button>
         </li>
       ))}
-      <Button type="button" onClick={() => {
-        append(fieldArray.reduce((p, c) => ({ ...p, [c.name]: "" }), {}))
-      }}>Add Item</Button>
+      <Button className=" flex-1"
+        type="button"
+        onClick={() => {
+          append(fieldArray.reduce((p, c) => ({ ...p, [c.name]: "" }), {}));
+        }}
+      >
+        Add Item
+      </Button>
     </ul>
   );
 };

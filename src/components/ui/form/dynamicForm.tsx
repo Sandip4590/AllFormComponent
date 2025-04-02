@@ -13,7 +13,7 @@ const DynamicForm = ({ form, onSubmit, formFields, id, className }: any) => {
         id={id}
         onSubmit={form.handleSubmit(onSubmit)}
         className={cn(
-          " space-y-3 max-w-md md:w-full sm:w-full  grid p-4  gap-2",
+          " space-y-3  md:w-full sm:w-full  grid p-4  gap-2",
           className
         )}
       >
