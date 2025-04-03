@@ -2,7 +2,7 @@ export const onSubmit = async (value, reset) => {
   try {
     console.log(value);
 
-    const response = await fetch("http://localhost:3000/item", {
+    const response = await fetch("http://localhost:3000/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
