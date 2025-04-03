@@ -12,10 +12,11 @@ const Login = () => {
     defaultValues: FormFields.reduce((p, c) => ({ ...p, [c.name]: "" }), {}),
   });
 
-  const handleSubmit = async (value) => {
-    await onSubmit(value, form.reset); // Passing form.reset here
-    console.log(value)
-  };
+  // const handleSubmit = async (value) => {
+  //   await onSubmit(value, form.reset); 
+  //   console.log("data submiting SuccessFully")// Passing form.reset here
+  //   console.log(value)
+  // };
 
   return (
     <div className="h-screen flex flex-col sm:justify-center items-center gap-5 mt-16">
@@ -27,7 +28,7 @@ const Login = () => {
         id="login-form"
         className=" grid-cols-1 sm:grid-cols-2 md:grid-cols-2"
       />
-      <Button className="w-100 h-12 bg-violet-950"type="submit" form="login-form">
+      <Button className="w-100 h-12 bg-violet-950" type="submit" form="login-form">
         Confirm
       </Button>
     </div>

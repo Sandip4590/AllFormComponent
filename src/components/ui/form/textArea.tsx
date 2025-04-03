@@ -14,7 +14,7 @@ const TextArea = ({className, control, name, rules, label, ...props }) => {
     name={name}
     rules={rules}
     render={({ field }) => (
-      <FormItem className={cn(className)}>
+      <FormItem className={cn("overflow-hidden",className)}>
         <FormLabel>{label}</FormLabel>
         <FormControl>
           <Textarea

@@ -22,15 +22,15 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import {
-    Table,
-    TableBody,
-    TableCaption,
-    TableCell,
-    TableFooter,
-    TableHead,
-    TableHeader,
-    TableRow,
-  } from "@/components/ui/table"
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -45,51 +45,50 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 type Props = {};
 
-
 const invoices = [
-    {
-      invoice: "INV001",
-      paymentStatus: "Paid",
-      totalAmount: "$250.00",
-      paymentMethod: "Credit Card",
-    },
-    {
-      invoice: "INV002",
-      paymentStatus: "Pending",
-      totalAmount: "$150.00",
-      paymentMethod: "PayPal",
-    },
-    {
-      invoice: "INV003",
-      paymentStatus: "Unpaid",
-      totalAmount: "$350.00",
-      paymentMethod: "Bank Transfer",
-    },
-    {
-      invoice: "INV004",
-      paymentStatus: "Paid",
-      totalAmount: "$450.00",
-      paymentMethod: "Credit Card",
-    },
-    {
-      invoice: "INV005",
-      paymentStatus: "Paid",
-      totalAmount: "$550.00",
-      paymentMethod: "PayPal",
-    },
-    {
-      invoice: "INV006",
-      paymentStatus: "Pending",
-      totalAmount: "$200.00",
-      paymentMethod: "Bank Transfer",
-    },
-    {
-      invoice: "INV007",
-      paymentStatus: "Unpaid",
-      totalAmount: "$300.00",
-      paymentMethod: "Credit Card",
-    },
-  ]
+  {
+    invoice: "INV001",
+    paymentStatus: "Paid",
+    totalAmount: "$250.00",
+    paymentMethod: "Credit Card",
+  },
+  {
+    invoice: "INV002",
+    paymentStatus: "Pending",
+    totalAmount: "$150.00",
+    paymentMethod: "PayPal",
+  },
+  {
+    invoice: "INV003",
+    paymentStatus: "Unpaid",
+    totalAmount: "$350.00",
+    paymentMethod: "Bank Transfer",
+  },
+  {
+    invoice: "INV004",
+    paymentStatus: "Paid",
+    totalAmount: "$450.00",
+    paymentMethod: "Credit Card",
+  },
+  {
+    invoice: "INV005",
+    paymentStatus: "Paid",
+    totalAmount: "$550.00",
+    paymentMethod: "PayPal",
+  },
+  {
+    invoice: "INV006",
+    paymentStatus: "Pending",
+    totalAmount: "$200.00",
+    paymentMethod: "Bank Transfer",
+  },
+  {
+    invoice: "INV007",
+    paymentStatus: "Unpaid",
+    totalAmount: "$300.00",
+    paymentMethod: "Credit Card",
+  },
+];
 
 const Invoice = (props: Props) => {
   const form = useForm({
@@ -97,15 +96,15 @@ const Invoice = (props: Props) => {
   });
 
   const handleSubmit = async (value) => {
-    // await onSubmit(value, form.reset);
+    await onSubmit(value, form.reset);
     //  // Passing form.reset here
-    form.reset()
+    form.reset();
     console.log(value);
   };
 
   return (
-    <section className="   mx-auto flex flex-col gap-5  h-screen">
-      <header className=" flex justify-between">
+    <section className="   mx-auto flex flex-col gap-5 p-5  h-screen">
+      <header className=" flex justify-between flex-wrap">
         <div className="flex flex-col gap-2">
           <h1 className=" text-5xl font-semibold  ">Invoices</h1>
           <p className=" font-semibold">There are 7 Total Invoices</p>
@@ -139,41 +138,30 @@ const Invoice = (props: Props) => {
                 <span className="max-sm:sr-only">New Invoice</span>
               </Button>
             </SheetTrigger>
-            <SheetContent className=" w-full !max-w-xl "  >
+            <SheetContent className=" w-full !max-w-xl ">
               <SheetHeader>
                 <SheetTitle>Edit profile</SheetTitle>
               </SheetHeader>
-              
 
-<ScrollArea className="h-[80%]  rounded-md border">
-<DynamicForm 
-                form={form}
-                onSubmit={handleSubmit}
-                formFields={FormFields}
-                id="login-form"
-                className="grid grid-cols-12  "
-              />
-      
-    </ScrollArea>
-
-
-
-
-
-
-
-
-
-
+              <ScrollArea className="h-[80%]  rounded-md border">
+                <DynamicForm
+                  form={form}
+                  onSubmit={handleSubmit}
+                  formFields={FormFields}
+                  id="login-form"
+                  className="grid grid-cols-12  "
+                />
+              </ScrollArea>
 
               <SheetFooter>
-                <SheetClose className=" flex justify-end gap-4" >
-               
-                  
-                  <Button type="submit" variant="secondary" >Cancle</Button>
-                  <Button type="submit" form="login-form">Save changes</Button>
+                <SheetClose className=" flex justify-end gap-4">
+                  <Button type="submit" variant="secondary">
+                    Cancle
+                  </Button>
+                  <Button type="submit" form="login-form">
+                    Save changes
+                  </Button>
                 </SheetClose>
-                
               </SheetFooter>
             </SheetContent>
           </Sheet>
@@ -181,34 +169,34 @@ const Invoice = (props: Props) => {
       </header>
 
       <main>
-
-      <Table>
-    
-      <TableHeader>
-        <TableRow>
-          <TableHead className="w-[100px]">Invoice</TableHead>
-          <TableHead>Status</TableHead>
-          <TableHead>Method</TableHead>
-          <TableHead className="text-right">Amount</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {invoices.map((invoice) => (
-          <TableRow key={invoice.invoice}>
-            <TableCell className="font-medium">{invoice.invoice}</TableCell>
-            <TableCell>{invoice.paymentStatus}</TableCell>
-            <TableCell>{invoice.paymentMethod}</TableCell>
-            <TableCell className="text-right">{invoice.totalAmount}</TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-      <TableFooter>
-        <TableRow>
-          <TableCell colSpan={3}>Total</TableCell>
-          <TableCell className="text-right">$2,500.00</TableCell>
-        </TableRow>
-      </TableFooter>
-    </Table>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="w-[100px]">Invoice</TableHead>
+              <TableHead>Status</TableHead>
+              <TableHead>Method</TableHead>
+              <TableHead className="text-right">Amount</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {invoices.map((invoice) => (
+              <TableRow key={invoice.invoice}>
+                <TableCell className="font-medium">{invoice.invoice}</TableCell>
+                <TableCell>{invoice.paymentStatus}</TableCell>
+                <TableCell>{invoice.paymentMethod}</TableCell>
+                <TableCell className="text-right">
+                  {invoice.totalAmount}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+          <TableFooter>
+            <TableRow>
+              <TableCell colSpan={3}>Total</TableCell>
+              <TableCell className="text-right">$2,500.00</TableCell>
+            </TableRow>
+          </TableFooter>
+        </Table>
       </main>
     </section>
   );

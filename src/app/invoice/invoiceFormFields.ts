@@ -166,7 +166,7 @@ const formFields =[
         message: "Payment Terms are required",
       },
     },
-    className: "col-span-6 bg-red-500",
+    className: "col-span-6 ",
   },
   {
     component: TextArea,
